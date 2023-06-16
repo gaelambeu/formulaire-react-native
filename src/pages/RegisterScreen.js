@@ -6,8 +6,15 @@ import {Text,
     TouchableOpacity, 
     StyleSheet} from 'react-native';
 
-const RegisterScreen = () =>{
+import useAuthContext from "../context/AuthContext";
 
+
+const RegisterScreen = ({navigation}) =>{
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [password_confirmation, setPasswordConfirmation] = useState("");
+    const {register, errors} = useAuthContext();
 
     return(
         <View style={styles.container}>
@@ -17,8 +24,8 @@ const RegisterScreen = () =>{
                     style={styles.input}
                     type="text" 
                     placeholder="Entrez nom"
-                    value={nom}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                 />
 
                 <TextInput 
@@ -50,8 +57,8 @@ const RegisterScreen = () =>{
                 <View style={{ flexDirection: 'row', marginTop: 20 }}>
                     <Text>j 'ai pas de compte</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
-                        <Text style={styles.link} >Register</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+                        <Text style={styles.link} >Login</Text>
                     </TouchableOpacity>
                 </View>
             </View>      
