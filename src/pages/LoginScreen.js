@@ -5,10 +5,14 @@ import {Text,
         Button, 
         TouchableOpacity, 
         StyleSheet} from 'react-native';
+        
+import useAuthContext from "../context/AuthContext";
+
 
 const LoginScreen = ({navigation}) =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const {login, errors} = useAuthContext();
 
     return(
         <View style={styles.container}>
@@ -32,7 +36,7 @@ const LoginScreen = ({navigation}) =>{
                 <View style={{ flexDirection: 'row', marginTop: 20 }}>
                     <Text>j 'ai pas de compte</Text>
 
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
                         <Text style={styles.link} >Register</Text>
                     </TouchableOpacity>
                 </View>
