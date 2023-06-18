@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import {Text, 
     View, 
     TextInput, 
@@ -7,6 +7,7 @@ import {Text,
     StyleSheet} from 'react-native';
 
 import useAuthContext from "../context/AuthContext";
+
 
 
 const RegisterScreen = ({navigation}) =>{
