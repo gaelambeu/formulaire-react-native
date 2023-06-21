@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, Button, StyleSheet } from 'react-native';
 
-const Register  = () => {
+const FormRegister  = () => {
     return (
         <View>
             <Text> Register Screen</Text>
@@ -9,7 +9,7 @@ const Register  = () => {
     );
 };
 
-export default Register;
+export default FormRegister;
 
 const styles = StyleSheet.create({
     container : {
